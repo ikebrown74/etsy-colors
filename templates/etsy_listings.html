@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{color|title}} Etsy</title>
+        <style>
+        .listing_box {
+            width: 200px;
+            background: white;
+            text-align: center;
+            padding: 3px;
+            margin: 5px;
+            border: 1px double black;
+            height: 250px;
+            float: left
+        }
+        .listing_box a {
+            text-shadow: 1px 1px #aaaaaa;
+            color: {{color}}
+        }
+        #footer {
+            background: white;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body style="background:{{color}}">
+        <h1>{{ title_color }} Etsy</h1>
+        
+        <div style="overflow: hidden">
+            {% for listing in listings %}
+            <div class="listing_box">
+                <br>
+                <a href="{{ listing.url}}">
+                <img src="{{ listing.image_url }}"><br>
+                {{ listing.title|safe }}</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="footer">
+            <a href="etsy-pink">Pink</a>-
+            <a href="etsy-azure">Azure</a>-
+            <a href="etsy-salmon">Salmon</a>-
+            <a href="etsy-thistle">Thistle</a>-
+            <a href="etsy-lightgreen">Light Green</a>-
+            <a href="etsy-gray">Gray</a>-
+            <a href="etsy-tan">Tan</a>-
+            <a href="etsy-gold">Gold</a>-
+            <a href="etsy-mistyrose">Misty Rose</a>-
+            <a href="etsy-royalblue">Royal Blue</a>-
+            <a href="etsy-darkseagreen">Dark Sea Green</a>-
+            <a href="etsy-palegoldenrod">PaleGoldenRod</a>
+        </div>
+    </body>
+</html>
