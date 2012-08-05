@@ -13,8 +13,6 @@ def etsy_colors(request, color):
     except ValueError:
         raise Http404('Color not valid')
     
-    title_color = hex_to_name(color_hex)
-    
     etsy = Etsy(settings.ETSY_CONSUMER_KEY, settings.ETSY_SHARED_SECRET)
 
     response = etsy.show_listings(color=color_hex)
@@ -33,4 +31,4 @@ def etsy_colors(request, color):
         listing['image_url'] = image_url
         listings.append(listing)
         
-    return {'listings': listings, 'color': color, 'title_color': title_color}
+    return {'listings': listings, 'color': color}
